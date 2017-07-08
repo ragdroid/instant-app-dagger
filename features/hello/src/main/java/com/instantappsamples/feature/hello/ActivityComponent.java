@@ -1,4 +1,4 @@
-package com.google.android.instantapps.samples.hellofeature;
+package com.instantappsamples.feature.hello;
 
 import android.app.Activity;
 
@@ -15,7 +15,7 @@ import dagger.Component;
 @Component(dependencies = AppComponent.class, modules = ActivityModule.class)
 public interface ActivityComponent {
 
-    void inject(MainActivity mainActivity);
+    void inject(HelloActivity helloActivity);
 
     @Component.Builder
     interface Builder {

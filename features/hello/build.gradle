@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+    api "com.google.dagger:dagger:2.11"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.11"
     implementation project(':features:base')
     api ('com.google.android.instantapps:instantapps:1.0.0') {
         // This is to exclude the transitive dependencies for the support library otherwise

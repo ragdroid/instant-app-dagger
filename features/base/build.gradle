@@ -40,7 +40,7 @@ dependencies {
     feature project(':features:hello')
     api "com.android.support:appcompat-v7:${rootProject.supportLib}"
 
-    compile "com.google.dagger:dagger:2.11"
+    api "com.google.dagger:dagger:2.11"
     annotationProcessor "com.google.dagger:dagger-compiler:2.11"
 
 

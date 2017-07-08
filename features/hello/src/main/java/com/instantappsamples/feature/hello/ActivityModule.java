@@ -1,4 +1,4 @@
-package com.google.android.instantapps.samples.hellofeature;
+package com.instantappsamples.feature.hello;
 
 
 import com.instantappsamples.feature.base.BaseActivityModule;

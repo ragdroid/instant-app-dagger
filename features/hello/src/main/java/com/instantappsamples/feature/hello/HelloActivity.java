@@ -16,21 +16,38 @@
 
 package com.instantappsamples.feature.hello;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+
+import com.instantappsamples.feature.base.HelloApplication;
+
+import javax.inject.Inject;
 
 /**
  * This Activity displays a simple hello world text.
  */
 public class HelloActivity extends AppCompatActivity {
 
+    @Inject
+    Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello);
+
+        DaggerActivityComponent.builder()
+                .activity(this)
+                .appComponent(((HelloApplication) getApplication()).getAppComponent())
+                .build()
+                .inject(this);
+
+        Log.d(HelloActivity.class.getSimpleName(), "injected context" + context);
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
