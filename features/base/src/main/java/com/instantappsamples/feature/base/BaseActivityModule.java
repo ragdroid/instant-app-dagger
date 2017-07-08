@@ -11,6 +11,7 @@ import dagger.Provides;
  */
 @Module
 public class BaseActivityModule {
+
     @Provides
     @PerActivity
     public Context provideContext(Activity activity) {

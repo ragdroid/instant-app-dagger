@@ -18,6 +18,7 @@ package com.instantappsamples.feature.hello;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +37,9 @@ public class HelloActivity extends AppCompatActivity {
     @Inject
     Context context;
 
+    @Inject
+    SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +52,7 @@ public class HelloActivity extends AppCompatActivity {
                 .inject(this);
 
         Log.d(HelloActivity.class.getSimpleName(), "injected context" + context);
+        Log.d(HelloActivity.class.getSimpleName(), "injected preferences" + sharedPreferences);
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

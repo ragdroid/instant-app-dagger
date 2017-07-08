@@ -1,4 +1,4 @@
-package com.instantappsamples.feature.hello;
+package com.instantappsamples.feature.base.common;
 
 
 import android.app.Activity;
@@ -19,7 +19,8 @@ public class ActivityModule extends BaseActivityModule {
 
     @Provides
     @PerActivity
-    SharedPreferences provideSharedPrefs(Activity activity) {
+    public SharedPreferences providePreferences(Activity activity) {
         return PreferenceManager.getDefaultSharedPreferences(activity);
     }
+
 }
