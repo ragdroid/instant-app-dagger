@@ -9,27 +9,17 @@ import android.support.v7.app.AppCompatActivity;
  * Created by @iamBedant on 08/07/17.
  */
 
-public class BaseActivity extends AppCompatActivity{
+public class BaseActivity extends AppCompatActivity {
 
 
     /*
             This Class will contain all common features like show loader, Hide loader, release disposables
      */
 
-    BaseActivityComponent mComponent;
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
 
-        mComponent = DaggerBaseActivityComponent.builder()
-                .activity(this)
-                .appComponent(((HelloApplication) getApplication()).getAppComponent())
-                .build();
-    }
-
-    public BaseActivityComponent getBaseActivityComponent() {
-        return mComponent;
     }
 
 

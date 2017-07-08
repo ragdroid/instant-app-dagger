@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.instantappsamples.feature.base.CommonActivity">
+    tools:context="com.instantappsamples.feature.base.common.CommonActivity">
 
 </android.support.constraint.ConstraintLayout>

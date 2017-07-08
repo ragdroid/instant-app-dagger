@@ -6,8 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.instantappsamples.feature.base.BaseActivity;
-import com.instantappsamples.feature.base.BaseActivityComponent;
-import com.instantappsamples.feature.base.DaggerBaseActivityComponent;
 import com.instantappsamples.feature.base.HelloApplication;
 
 /**

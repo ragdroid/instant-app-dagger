@@ -24,7 +24,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.instantappsamples.feature.base.CommonActivity">
+        <activity android:name="com.instantappsamples.feature.base.common.CommonActivity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
