@@ -1,3 +1,7 @@
+
+Project copied from [googlesample](https://github.com/googlesamples/android-instant-apps).
+Also uses Dagger 2 for experimentation purposes.
+
 # Android Instant Apps - Hello World sample app
 
 This sample app demonstrates the building of an installed and an instant app
