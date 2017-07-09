@@ -20,10 +20,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.instantappsamples.feature.base.BaseActivity;
 import com.instantappsamples.feature.base.HelloApplication;
 
 import javax.inject.Inject;
@@ -31,7 +31,7 @@ import javax.inject.Inject;
 /**
  * This Activity displays a simple hello world text.
  */
-public class HelloActivity extends AppCompatActivity {
+public class HelloActivity extends BaseHelloActivity {
 
     @Inject
     Context context;
@@ -41,11 +41,8 @@ public class HelloActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello);
 
-        DaggerActivityComponent.builder()
-                .activity(this)
-                .appComponent(((HelloApplication) getApplication()).getAppComponent())
-                .build()
-                .inject(this);
+
+        getActivityComponent().inject(this);
 
         Log.d(HelloActivity.class.getSimpleName(), "injected context" + context);
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {

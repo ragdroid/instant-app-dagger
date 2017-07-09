@@ -22,23 +22,31 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.instantappsamples.feature.base.BaseActivity;
+import com.instantappsamples.feature.base.HelloApplication;
 
-/** Simple activity that says goodbye. */
-public class GoodbyeActivity extends AppCompatActivity {
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_goodbye);
-    findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Intent intent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("https://hello-feature.instantappsample.com/main"));
-        intent.setPackage(getPackageName());
-        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        startActivity(intent);
-      }
-    });
-  }
+/**
+ * Simple activity that says goodbye.
+ */
+public class GoodbyeActivity extends BaseByeActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_goodbye);
+
+        getByeActivityComponent().inject(this);
+
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://hello-feature.instantappsample.com/main"));
+                intent.setPackage(getPackageName());
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                startActivity(intent);
+            }
+        });
+    }
 }
